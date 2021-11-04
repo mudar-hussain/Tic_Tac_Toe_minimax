@@ -1,4 +1,13 @@
-p1 = input("Player 1 Please pick a marker 'X' or 'O'")
+#    -*- coding: UTF-8  -*-
+"""
+Developer: Mudar Hussain
+"""
+print()
+print('\t\tWelcome to Tic Tac Toe!')
+print()
+print('-------------------------------------------------------------------------------------')
+print()
+p1 = input("Player 1 Please pick a marker 'X' or 'O'").upper()
 if p1 == 'X':
     p2 = 'O'
 else:
@@ -18,8 +27,8 @@ def choice(p):
     loop=True
     while (c < 1 or c > 3 or r < 1 or r > 3) or loop:
         loop = False
-        c = input(f'Player {p}, Please enter column no (1-3)')
         r = input(f'Player {p}, Please enter row no (1-3)')
+        c = input(f'Player {p}, Please enter column no (1-3)')
         try:
             c = int(c)
             r = int(r)
@@ -31,17 +40,17 @@ def choice(p):
         if (c < 1 or c > 3 or r < 1 or r > 3):
             print('Enter numbers within range (1-3)')
             loop = True
-        elif (c >= 1 or c <= 3 or r >= 1 or r <= 3) and row[c - 1][r - 1] != ' ':
+        elif (c >= 1 or c <= 3 or r >= 1 or r <= 3) and row[r - 1][c - 1] != ' ':
             print('This position is already taken')
             loop = True
     if p == 1:
-        row[c - 1][r - 1] = p1
+        row[r - 1][c - 1] = p1
     else:
-        row[c - 1][r - 1] = p2
+        row[r - 1][c - 1] = p2
 
 def check_winner():
-    if ' ' not in (row[0][0] , row[1][1] , row[2][2]) and row[0][0] == row[1][1] == row[2][2]: return row[0][0]
-    elif ' ' not in (row[0][0] , row[1][1] , row[2][2]) and row[0][0] == row[1][1] == row[2][2]: return row[0][1]
+    if ' ' not in (row[0][0] , row[1][0] , row[2][0]) and row[0][0] == row[1][0] == row[2][0]: return row[0][0]
+    elif ' ' not in (row[0][1] , row[1][1] , row[2][1]) and row[0][1] == row[1][1] == row[2][1]: return row[0][1]
     elif ' ' not in (row[0][2] , row[1][2] , row[2][2]) and row[0][2] == row[1][2] == row[2][2]: return row[0][2]
     elif ' ' not in (row[1][0] , row[1][1] , row[1][2]) and row[1][0] == row[1][1] == row[1][2]: return row[1][0]
     elif ' ' not in (row[2][0] , row[2][1] , row[2][2]) and row[2][0] == row[2][1] == row[2][2]: return row[2][0]

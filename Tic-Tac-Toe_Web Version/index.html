@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--
+        Developer: Mudar Hussain
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="minimax.js"></script>
+    <title>Tic-Tac-Toe - Minimax AI Algorithm</title>
+</head>
+<body>
+    <header>
+        <p id="tle"> Tic-Tac-Toe using Minimax AI Algorithm</p>
+    </header>
+        <p id="result"></p>
+
+    <table id="game_board">
+        <tr><td id="7" onclick="mark(this)"></td>   <td id="8" onclick="mark(this)"></td>   <td id="9" onclick="mark(this)"></td></tr>
+        <tr><td id="4" onclick="mark(this)"></td>   <td id="5" onclick="mark(this)"></td>   <td id="6" onclick="mark(this)"></td></tr>
+        <tr><td id="1" onclick="mark(this)"></td>   <td id="2" onclick="mark(this)"></td>   <td id="3" onclick="mark(this)"></td></tr>
+    </table>
+    <br><br>
+    <input id="restart"  type="button" onclick="restart()" value="Restart">
+    <footer>
+        <p>Connect me @<a href="https://www.linkedin.com/in/mudar-hussain/" target="_blank">LinkedIn</a></p>
+    </footer>
+
+</body>
+</html>
