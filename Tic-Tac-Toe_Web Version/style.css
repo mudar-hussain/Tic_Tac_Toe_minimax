@@ -92,3 +92,8 @@ a:visited {
 	cursor: pointer;
     color: rgb(255, 255, 255);
 }
+
+#restart:disabled {
+	color: #444;
+	background: #CECECE;
+}
