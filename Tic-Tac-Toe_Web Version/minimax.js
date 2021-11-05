@@ -136,11 +136,15 @@ function mark(cell){
         }
     }
 
-    if(gameOver(game_board,computer)){
-        document.getElementById("result").innerHTML = "You loose!";
-    }
+
+
     if(emptyCells(game_board).length == 0 && !gameOverAll(game_board)){
         document.getElementById("result").innerHTML = "Game Draw - Let's play again";
+    }
+    if(gameOver(game_board,computer)){
+        document.getElementById("result").innerHTML = "You loose! - Let's play again";
+    }else if(gameOver(game_board,human)){
+        document.getElementById("result").innerHTML = "You Win! - Let's play again";
     }
     if(emptyCells(game_board).length == 0 || gameOverAll(game_board)){
         button.value = "Restart";
@@ -150,7 +154,7 @@ function mark(cell){
 
 /* Restart Function */
 function restart(button){
-    if(button.value == "Computer First!"){
+    if(button.value == "Play Computer"){
         button.disabled = true;
         aiTurn();
     }
@@ -162,7 +166,7 @@ function restart(button){
             htmlBoard.style.color = "#444";
             htmlBoard.innerHTML = "";
         }
-        button.value = "Computer First!";
+        button.value = "Play Computer";
         document.getElementById("result").innerHTML = "";
     }
 }
